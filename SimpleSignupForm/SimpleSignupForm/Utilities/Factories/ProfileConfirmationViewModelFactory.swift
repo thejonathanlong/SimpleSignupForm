@@ -9,11 +9,7 @@ import Foundation
 
 class ProfileConfirmationViewModelFactory {
     
-    weak var store: AppStore? {
-        didSet {
-            print("JLO: \(store)")
-        }
-    }
+    weak var store: AppStore?
     
     init(store: AppStore? = nil) {
         self.store = store

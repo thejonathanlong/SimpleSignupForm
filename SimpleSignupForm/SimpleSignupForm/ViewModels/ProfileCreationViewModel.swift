@@ -7,18 +7,18 @@
 
 import Foundation
 
-class ProfileCreationViewModel<TextFieldViewmodel>: ObservableObject where TextFieldViewmodel: TextFieldDisplayable {
+class ProfileCreationViewModel<TextFieldViewModel>: ObservableObject where TextFieldViewModel: TextFieldDisplayable {
     var heading: String
     
     var subHeadings: [String]
     
-    var textFieldViewModels: [TextFieldViewmodel]
+    var textFieldViewModels: [TextFieldViewModel]
     
     weak var store: AppStore?
     
     init(heading: String,
          subHeadings: [String],
-         textFieldViewModels: [TextFieldViewmodel] = [],
+         textFieldViewModels: [TextFieldViewModel] = [],
          store: AppStore? = nil) {
         self.heading = heading
         self.subHeadings = subHeadings
@@ -27,7 +27,14 @@ class ProfileCreationViewModel<TextFieldViewmodel>: ObservableObject where TextF
     }
     
     func submit() {
-        //TODO: Get the right things here. Need to be able to identify the viewModels.
-        store?.dispatch(.profileCreation(.submitProfile("", "", "", "")))
+        let name = text(for: .name)
+        let password = text(for: .password)
+        let email = text(for: .email)
+        let website = text(for: .website)
+        store?.dispatch(.profileCreation(.submitProfile(name, password, email, website)))
+    }
+    
+    func text(for type: TextFieldType) -> String{
+        textFieldViewModels.first { $0.type == type }?.text
     }
 }

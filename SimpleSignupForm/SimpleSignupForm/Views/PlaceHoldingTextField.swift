@@ -7,10 +7,31 @@
 
 import SwiftUI
 
+enum TextFieldType {
+    case name
+    case email
+    case password
+    case website
+    
+    var placeHolder: String {
+        switch self {
+            case .name:
+                return "First Name"
+            case .email:
+                return "Email Address"
+            case .password:
+                return "Password"
+            case .website:
+                return "Website"
+        }
+    }
+}
+
 protocol TextFieldDisplayable: ObservableObject {
     var placeHolder: String { get }
     var text: String { get set }
     var error: String { get }
+    var type: TextFieldType { get }
     func didSubmit()
 }
 
@@ -57,6 +78,8 @@ struct PlaceHoldingTextField<ViewModel>: View where ViewModel: TextFieldDisplaya
 }
 
 class Preview_TextFieldDisplayable: TextFieldDisplayable {
+    var type: TextFieldType
+    
     var error: String
     
     var placeHolder: String
@@ -69,6 +92,7 @@ class Preview_TextFieldDisplayable: TextFieldDisplayable {
         self.text = text
         self.placeHolder = placeHolder
         self.error = error
+        self.type = .name
     }
     
     func didSubmit() {

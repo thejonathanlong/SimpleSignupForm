@@ -16,10 +16,10 @@ class ProfileCreationViewModelFactory {
     
     func createProfileViewModel(heading: String, subHeading: [String]) -> ProfileCreationViewModel<TextFieldViewModel> {
             
-        let firstNameTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .normal("First Name"))
-        let emailTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .email("Email Address"))
-        let passwordTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .required("Password"))
-        let websiteTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .required("Website"))
+        let firstNameTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .name)
+        let emailTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .email)
+        let passwordTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .password)
+        let websiteTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .website)
         
         let profileCreationViewModel = ProfileCreationViewModel(heading: heading,
                                             subHeadings: subHeading,

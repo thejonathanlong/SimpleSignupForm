@@ -16,11 +16,14 @@ class TextFieldViewModel: TextFieldDisplayable {
     
     var validators: [Validator]
     
-    init(placeHolder: String,
+    var type: TextFieldType
+    
+    init(type: TextFieldType,
          text: String = "",
          error: String = "",
          validators: [Validator] = []) {
-        self.placeHolder = placeHolder
+        self.type = type
+        self.placeHolder = type.placeHolder
         self.text = text
         self.error = error
         self.validators = validators
