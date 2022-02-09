@@ -19,13 +19,3 @@ struct AppState {
         self.router = router
     }
 }
-
-enum ProfileCreationAction {
-    case submitProfile(String, String, String, String)
-    case submittedProfile(String, String, String)
-    case failedToSubmitProfile
-}
-
-struct ProfileCreationState {
-    
-}

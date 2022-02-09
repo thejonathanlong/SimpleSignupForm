@@ -19,6 +19,10 @@
 		56681C6727B38B4E001873F1 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C6627B38B4E001873F1 /* ConfirmationView.swift */; };
 		56681C6927B38EFC001873F1 /* ProfileCreationViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C6827B38EFC001873F1 /* ProfileCreationViewModelFactory.swift */; };
 		56681C6B27B38F64001873F1 /* TextFieldViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C6A27B38F64001873F1 /* TextFieldViewModelFactory.swift */; };
+		56681C6D27B42713001873F1 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C6C27B42713001873F1 /* ProfileService.swift */; };
+		56681C6F27B4291B001873F1 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C6E27B4291B001873F1 /* Middleware.swift */; };
+		56681C7127B42950001873F1 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C7027B42950001873F1 /* Reducers.swift */; };
+		56681C7327B4297D001873F1 /* ProfileCreationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C7227B4297D001873F1 /* ProfileCreationState.swift */; };
 		56E0C7EC27B3570F005ED2C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C7EB27B3570F005ED2C2 /* AppDelegate.swift */; };
 		56E0C7EE27B3570F005ED2C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C7ED27B3570F005ED2C2 /* SceneDelegate.swift */; };
 		56E0C7F527B35710005ED2C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56E0C7F427B35710005ED2C2 /* Assets.xcassets */; };
@@ -61,6 +65,10 @@
 		56681C6627B38B4E001873F1 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		56681C6827B38EFC001873F1 /* ProfileCreationViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCreationViewModelFactory.swift; sourceTree = "<group>"; };
 		56681C6A27B38F64001873F1 /* TextFieldViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModelFactory.swift; sourceTree = "<group>"; };
+		56681C6C27B42713001873F1 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		56681C6E27B4291B001873F1 /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
+		56681C7027B42950001873F1 /* Reducers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
+		56681C7227B4297D001873F1 /* ProfileCreationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCreationState.swift; sourceTree = "<group>"; };
 		56E0C7E827B3570F005ED2C2 /* SimpleSignupForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSignupForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E0C7EB27B3570F005ED2C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56E0C7ED27B3570F005ED2C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,9 +113,11 @@
 		56681C5227B37A89001873F1 /* Redux */ = {
 			isa = PBXGroup;
 			children = (
+				56681C7427B42982001873F1 /* States */,
+				56681C6E27B4291B001873F1 /* Middleware.swift */,
+				56681C7027B42950001873F1 /* Reducers.swift */,
 				56681C5727B37BC1001873F1 /* Router.swift */,
 				56681C5027B37A7E001873F1 /* Store.swift */,
-				56681C5327B37A92001873F1 /* AppState.swift */,
 			);
 			path = Redux;
 			sourceTree = "<group>";
@@ -141,8 +151,18 @@
 				56681C6327B386D2001873F1 /* Validators.swift */,
 				56681C6827B38EFC001873F1 /* ProfileCreationViewModelFactory.swift */,
 				56681C6A27B38F64001873F1 /* TextFieldViewModelFactory.swift */,
+				56681C6C27B42713001873F1 /* ProfileService.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		56681C7427B42982001873F1 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				56681C5327B37A92001873F1 /* AppState.swift */,
+				56681C7227B4297D001873F1 /* ProfileCreationState.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 		56E0C7DF27B3570F005ED2C2 = {
@@ -328,17 +348,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56681C6F27B4291B001873F1 /* Middleware.swift in Sources */,
 				56681C5127B37A7E001873F1 /* Store.swift in Sources */,
 				56E0C81E27B358D3005ED2C2 /* PlaceHoldingTextField.swift in Sources */,
 				56681C5827B37BC1001873F1 /* Router.swift in Sources */,
 				56681C5427B37A92001873F1 /* AppState.swift in Sources */,
 				56E0C81C27B3575F005ED2C2 /* ProfileCreationView.swift in Sources */,
+				56681C7127B42950001873F1 /* Reducers.swift in Sources */,
 				56681C5A27B37C3F001873F1 /* HostedViewController.swift in Sources */,
 				56681C5F27B37D7F001873F1 /* TextFieldViewModel.swift in Sources */,
 				56681C6B27B38F64001873F1 /* TextFieldViewModelFactory.swift in Sources */,
 				56681C6127B38356001873F1 /* ButtonStyles.swift in Sources */,
 				56681C6427B386D2001873F1 /* Validators.swift in Sources */,
 				56681C5D27B37D68001873F1 /* ProfileCreationViewModel.swift in Sources */,
+				56681C6D27B42713001873F1 /* ProfileService.swift in Sources */,
+				56681C7327B4297D001873F1 /* ProfileCreationState.swift in Sources */,
 				56681C6927B38EFC001873F1 /* ProfileCreationViewModelFactory.swift in Sources */,
 				56681C6727B38B4E001873F1 /* ConfirmationView.swift in Sources */,
 				56681C5627B37B28001873F1 /* AppLifeCycleManager.swift in Sources */,

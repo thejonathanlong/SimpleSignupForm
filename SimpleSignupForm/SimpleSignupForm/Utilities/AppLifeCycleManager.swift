@@ -19,17 +19,12 @@ class AppLifeCycleManager {
 
     var store: AppStore?
 
-    var router: RouteController
-
-    init(router: RouteController = Router.shared) {
-        self.router = router
-    }
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         store = AppStore(initialState: state,
                                   reducer: appReducer,
                                   middlewares: [
+                                    profileServiceMiddleware(service: ProfileService())
                                   ])
 
         return true

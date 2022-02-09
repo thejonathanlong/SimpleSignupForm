@@ -9,6 +9,7 @@ import UIKit
 
 enum Route {
     case confirmation(ConfirmationViewModel)
+    case alert(Error)
 }
 
 protocol RouteController {
@@ -26,6 +27,9 @@ class Router: RouteController {
         switch destination {
             case .confirmation(let confirmationViewModel):
                 showConfirmationView(viewModel: confirmationViewModel)
+            
+            case .alert(let error):
+                showAlert(for: error)
         }
         
     }
@@ -33,9 +37,18 @@ class Router: RouteController {
 
 private extension Router {
     func showConfirmationView(viewModel: ConfirmationViewModel) {
-        let hostingController = HostedViewController(contentView: ConfirmationView(viewModel: viewModel))
+        let background = UIView()
+        background.backgroundColor = UIColor.white
+        let hostingController = HostedViewController(contentView: ConfirmationView(viewModel: viewModel), backgroundView: background)
         hostingController.modalPresentationStyle = .fullScreen
         
         rootViewController?.present(hostingController, animated: true, completion: nil)
+    }
+    
+    func showAlert(for error: Error) {
+        let alert = UIAlertController(title: "Oops...", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        rootViewController?.present(alert, animated: true, completion: nil)
     }
 }
