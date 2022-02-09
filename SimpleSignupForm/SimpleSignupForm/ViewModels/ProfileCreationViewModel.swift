@@ -34,7 +34,7 @@ class ProfileCreationViewModel<TextFieldViewModel>: ObservableObject where TextF
         store?.dispatch(.profileCreation(.submitProfile(name, password, email, website)))
     }
     
-    func text(for type: TextFieldType) -> String{
-        textFieldViewModels.first { $0.type == type }?.text
+    func text(for type: TextFieldType) -> String {
+        textFieldViewModels.first { $0.type == type }?.text ?? ""
     }
 }
