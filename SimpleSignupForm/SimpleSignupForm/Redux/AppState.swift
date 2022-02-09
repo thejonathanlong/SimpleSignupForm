@@ -18,7 +18,7 @@ struct AppState {
 struct ProfileCreationState {
     var profileCreationViewModel: ProfileCreationViewModel<TextFieldViewModel> {
         let firstNameTextFieldViewModel = TextFieldViewModel(placeHolder: "First Name")
-        let emailTextFieldViewModel = TextFieldViewModel(placeHolder: "Email Address", validators: [NotEmptyValidator()])
+        let emailTextFieldViewModel = TextFieldViewModel(placeHolder: "Email Address", validators: [NotEmptyValidator(), EmailAddressValidator()])
         let passwordTextFieldViewModel = TextFieldViewModel(placeHolder: "Password", validators: [NotEmptyValidator()])
         let websiteTextFieldViewModel = TextFieldViewModel(placeHolder: "Website", validators: [NotEmptyValidator()])
         
