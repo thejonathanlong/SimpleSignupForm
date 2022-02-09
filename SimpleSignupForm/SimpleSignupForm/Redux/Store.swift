@@ -76,8 +76,7 @@ func profileCreationReducer(state: inout AppState, action: ProfileCreationAction
             break
         
         case .submittedProfile(let name, let website, let email):
-            //Router should show confirmation
-            break
+            state.router.route(to: .confirmation(ConfirmationViewModel(website: website, name: name, email: email)))
         
         case .failedToSubmitProfile:
             // Router should show an alert to try again
@@ -90,7 +89,7 @@ protocol ProfileService {
 }
 
 typealias Middleware<State, Action> = (State, Action) -> AnyPublisher<Action, Never>?
-func dataStoreMiddleware(service: ProfileService) -> Middleware<AppState, AppAction> {
+func profileServiceMiddleware(service: ProfileService) -> Middleware<AppState, AppAction> {
     return { _, action in
         switch action {
             case .profileCreation(.submitProfile(let name, let password, let website, let email)):

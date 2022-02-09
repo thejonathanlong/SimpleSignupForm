@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ConfirmationViewModel {
-    var heading: String
-    var message: String
+    var heading: String {
+        "Hello, \(name)"
+    }
+    
+    var message: String {
+        "Your super-awesome portfolio has been succesfully submitted! The details below will be public within your community!"
+    }
+    
     var website: String
     var name: String
     var email: String
@@ -56,6 +62,6 @@ struct ConfirmationView: View {
 
 struct ConfirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmationView(viewModel: ConfirmationViewModel(heading: "Hello, Audrey!", message: "Your super-awesome portfolio has been succesfully submitted! The details below will be public within your community!", website: "amccoy8331.com", name: "Audrey", email: "amccoy9831@hotmail.com"))
+        ConfirmationView(viewModel: ConfirmationViewModel(website: "amccoy8331.com", name: "Audrey", email: "amccoy9831@hotmail.com"))
     }
 }

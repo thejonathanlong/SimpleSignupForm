@@ -13,6 +13,11 @@ enum AppAction {
 
 struct AppState {
     let profileCreationState = ProfileCreationState()
+    var router: RouteController
+    
+    init(router: RouteController = Router.shared) {
+        self.router = router
+    }
 }
 
 enum ProfileCreationAction {

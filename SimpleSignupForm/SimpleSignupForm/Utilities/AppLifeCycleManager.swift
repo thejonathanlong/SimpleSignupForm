@@ -53,7 +53,7 @@ class AppLifeCycleManager {
         let rootViewController = HostedViewController(contentView: profileCreationView, backgroundView: backgroundView)
         
         window?.rootViewController = rootViewController
-        router.rootViewController = rootViewController
+        state.router.rootViewController = rootViewController
         window?.makeKeyAndVisible()
     }
     

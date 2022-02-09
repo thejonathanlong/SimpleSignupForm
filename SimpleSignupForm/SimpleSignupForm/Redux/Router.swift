@@ -8,7 +8,7 @@
 import UIKit
 
 enum Route {
-    
+    case confirmation(ConfirmationViewModel)
 }
 
 protocol RouteController {
@@ -23,6 +23,19 @@ class Router: RouteController {
     var rootViewController: UIViewController?
     
     func route(to destination: Route) {
+        switch destination {
+            case .confirmation(let confirmationViewModel):
+                showConfirmationView(viewModel: confirmationViewModel)
+        }
         
+    }
+}
+
+private extension Router {
+    func showConfirmationView(viewModel: ConfirmationViewModel) {
+        let hostingController = HostedViewController(contentView: ConfirmationView(viewModel: viewModel))
+        hostingController.modalPresentationStyle = .fullScreen
+        
+        rootViewController?.present(hostingController, animated: true, completion: nil)
     }
 }

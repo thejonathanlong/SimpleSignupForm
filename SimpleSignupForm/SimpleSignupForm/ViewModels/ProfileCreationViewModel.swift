@@ -27,6 +27,7 @@ class ProfileCreationViewModel<TextFieldViewmodel>: ObservableObject where TextF
     }
     
     func submit() {
-        store?.dispatch(.profileCreation(.submitProfile))
+        //TODO: Get the right things here. Need to be able to identify the viewModels.
+        store?.dispatch(.profileCreation(.submitProfile("", "", "", "")))
     }
 }
