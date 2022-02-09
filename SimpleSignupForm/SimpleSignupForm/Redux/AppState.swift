@@ -6,3 +6,29 @@
 //
 
 import Foundation
+
+enum AppAction {
+    
+}
+
+struct AppState {
+    let profileCreationState = ProfileCreationState()
+}
+
+struct ProfileCreationState {
+    var profileCreationViewModel: ProfileCreationViewModel<TextFieldViewModel> {
+        let firstNameTextFieldViewModel = TextFieldViewModel(placeHolder: "First Name")
+        let emailTextFieldViewModel = TextFieldViewModel(placeHolder: "Email Address")
+        let passwordTextFieldViewModel = TextFieldViewModel(placeHolder: "Password")
+        let websiteTextFieldViewModel = TextFieldViewModel(placeHolder: "Website")
+        
+       return ProfileCreationViewModel(heading: "Profile Creation",
+                                subHeadings: ["Use the form below to submit your portfolio.",
+                                              "An email and password are required."],
+                                textFieldViewModels: [firstNameTextFieldViewModel,
+                                                     emailTextFieldViewModel,
+                                                     passwordTextFieldViewModel,
+                                                     websiteTextFieldViewModel])
+    }
+    
+}

@@ -7,28 +7,8 @@
 
 import SwiftUI
 
-class ProfileCreationViewModel<TextFieldViewmodel>: ObservableObject where TextFieldViewmodel: TextFieldDisplayable {
-    var heading: String
-    
-    var subHeadings: [String]
-    
-    var textFieldViewModels: [TextFieldViewmodel]
-    
-    init(heading: String,
-         subHeadings: [String],
-         textFieldViewModels: [TextFieldViewmodel] = []) {
-        self.heading = heading
-        self.subHeadings = subHeadings
-        self.textFieldViewModels = textFieldViewModels
-    }
-    
-    func submit() {
-        
-    }
-}
-
-struct ProfileCreationView<TextFieldViewmodel>: View where TextFieldViewmodel: TextFieldDisplayable {
-    var viewModel: ProfileCreationViewModel<TextFieldViewmodel>
+struct ProfileCreationView<TextFieldViewModel>: View where TextFieldViewModel: TextFieldDisplayable {
+    @EnvironmentObject var viewModel: ProfileCreationViewModel<TextFieldViewModel>
     
     var body: some View {
         VStack(spacing: 20) {
@@ -59,7 +39,7 @@ struct ProfileCreationView<TextFieldViewmodel>: View where TextFieldViewmodel: T
     var form: some View {
         VStack(alignment: .leading, spacing: 16) {
             ForEach(0..<viewModel.textFieldViewModels.count) {
-                PlaceHoldingTextField(viewModel: viewModel.textFieldViewModels[$0])
+                PlaceHoldingTextField<TextFieldViewModel>().environmentObject(viewModel.textFieldViewModels[$0])
             }
         }
     }
@@ -81,16 +61,15 @@ struct ProfileCreationView<TextFieldViewmodel>: View where TextFieldViewmodel: T
 
 struct ProfileCreationView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileCreationView(
-            viewModel: ProfileCreationViewModel<Preview_TextFieldDisplayable>(
-                heading: "Profile Creation",
-                subHeadings:
-                    ["Use the form below to submit your portfolio.", "An email and password are required."],
-                textFieldViewModels: [
-                    Preview_TextFieldDisplayable(placeHolder: "First Name"),
-                    Preview_TextFieldDisplayable(placeHolder: "Email Address"),
-                    Preview_TextFieldDisplayable(placeHolder: "Password"),
-                    Preview_TextFieldDisplayable(placeHolder: "Password")]
-            ))
+        ProfileCreationView<Preview_TextFieldDisplayable>().environmentObject(ProfileCreationViewModel<Preview_TextFieldDisplayable>(
+            heading: "Profile Creation",
+            subHeadings:
+                ["Use the form below to submit your portfolio.", "An email and password are required."],
+            textFieldViewModels: [
+                Preview_TextFieldDisplayable(placeHolder: "First Name"),
+                Preview_TextFieldDisplayable(placeHolder: "Email Address"),
+                Preview_TextFieldDisplayable(placeHolder: "Password"),
+                Preview_TextFieldDisplayable(placeHolder: "Password")]
+        ))
     }
 }

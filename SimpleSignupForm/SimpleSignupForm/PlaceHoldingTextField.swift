@@ -15,7 +15,7 @@ protocol TextFieldDisplayable: ObservableObject {
 
 struct PlaceHoldingTextField<ViewModel>: View where ViewModel: TextFieldDisplayable {
     
-    @ObservedObject var viewModel: ViewModel
+    @EnvironmentObject var viewModel: ViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,6 +23,7 @@ struct PlaceHoldingTextField<ViewModel>: View where ViewModel: TextFieldDisplaya
                 Text(viewModel.error)
                     .style(.error)
                     .padding(.leading, 16)
+                    .allowsHitTesting(false)
             }
             ZStack (alignment: .leading) {
                 TextField("", text: $viewModel.text)
@@ -59,9 +60,9 @@ class Preview_TextFieldDisplayable: TextFieldDisplayable {
 struct PlaceHoldingTextField_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            PlaceHoldingTextField(viewModel: Preview_TextFieldDisplayable(placeHolder: "Placeholder"))
-            PlaceHoldingTextField(viewModel: Preview_TextFieldDisplayable(text: "some text"))
-            PlaceHoldingTextField(viewModel: Preview_TextFieldDisplayable(text: "Is this right?", error: "Wrong stuff"))
+            PlaceHoldingTextField<Preview_TextFieldDisplayable>().environmentObject(Preview_TextFieldDisplayable(placeHolder: "Placeholder"))
+            PlaceHoldingTextField<Preview_TextFieldDisplayable>().environmentObject(Preview_TextFieldDisplayable(text: "some text"))
+            PlaceHoldingTextField<Preview_TextFieldDisplayable>().environmentObject(Preview_TextFieldDisplayable(text: "Is this right?", error: "Wrong stuff"))
         }
     }
 }
