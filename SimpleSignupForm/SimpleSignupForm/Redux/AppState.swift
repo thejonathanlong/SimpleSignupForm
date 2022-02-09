@@ -16,7 +16,9 @@ struct AppState {
 }
 
 enum ProfileCreationAction {
-    case submitProfile
+    case submitProfile(String, String, String, String)
+    case submittedProfile(String, String, String)
+    case failedToSubmitProfile
 }
 
 struct ProfileCreationState {

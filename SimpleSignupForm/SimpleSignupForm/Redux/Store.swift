@@ -59,10 +59,10 @@ final class Store<State, Action>: ObservableObject {
     }
 }
 
-typealias Middleware<State, Action> = (State, Action) -> AnyPublisher<Action, Never>?
+
 typealias Reducer<State, Action> = (inout State, Action) -> Void
 
-// MARK: - AppReducer
+// MARK: - Reducers
 func appReducer(state: inout AppState, action: AppAction) {
     switch action {
         case .profileCreation(let profileCreationAction):
@@ -74,5 +74,43 @@ func profileCreationReducer(state: inout AppState, action: ProfileCreationAction
     switch action {
         case .submitProfile:
             break
+        
+        case .submittedProfile(let name, let website, let email):
+            //Router should show confirmation
+            break
+        
+        case .failedToSubmitProfile:
+            // Router should show an alert to try again
+            break
+    }
+}
+
+protocol ProfileService {
+    func submitProfile(name: String, password: String, website: String, email: String) async throws
+}
+
+typealias Middleware<State, Action> = (State, Action) -> AnyPublisher<Action, Never>?
+func dataStoreMiddleware(service: ProfileService) -> Middleware<AppState, AppAction> {
+    return { _, action in
+        switch action {
+            case .profileCreation(.submitProfile(let name, let password, let website, let email)):
+                return Future<AppAction, Never> { promise in
+                    Task {
+                        do {
+                            try await service.submitProfile(name: name, password: password, website: website, email: email)
+                            promise(.success(.profileCreation(.submittedProfile(name, website, email))))
+                        } catch _ {
+                            promise(.success(.profileCreation(.failedToSubmitProfile)))
+                        }
+                        
+                    }
+                }.eraseToAnyPublisher()
+                
+            default:
+                break
+        }
+        
+        return Empty().eraseToAnyPublisher()
+        
     }
 }
