@@ -14,5 +14,5 @@ enum ProfileCreationAction {
 }
 
 struct ProfileCreationState {
-    
+    var viewModelFactory: ProfileCreationViewModelFactory
 }

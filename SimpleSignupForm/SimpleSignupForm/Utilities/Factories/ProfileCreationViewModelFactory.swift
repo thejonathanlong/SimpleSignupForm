@@ -7,16 +7,24 @@
 
 import Foundation
 
-struct ProfileCreationViewModelFactory {
-    static func createProfileViewModel(heading: String, subHeading: [String]) -> ProfileCreationViewModel<TextFieldViewModel> {
+class ProfileCreationViewModelFactory {
+    weak var store: AppStore?
+    
+    init(store: AppStore? = nil) {
+        self.store = store
+    }
+    
+    func createProfileViewModel(heading: String, subHeading: [String]) -> ProfileCreationViewModel<TextFieldViewModel> {
             
         let firstNameTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .normal("First Name"))
         let emailTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .email("Email Address"))
         let passwordTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .required("Password"))
         let websiteTextFieldViewModel = TextFieldViewModelFactory.createTextFieldViewModel(for: .required("Website"))
         
-            return ProfileCreationViewModel(heading: heading,
+        let profileCreationViewModel = ProfileCreationViewModel(heading: heading,
                                             subHeadings: subHeading,
                                             textFieldViewModels: [firstNameTextFieldViewModel, emailTextFieldViewModel, passwordTextFieldViewModel, websiteTextFieldViewModel ])
+        profileCreationViewModel.store = store
+        return profileCreationViewModel
     }
 }

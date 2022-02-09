@@ -26,6 +26,8 @@ class AppLifeCycleManager {
                                   middlewares: [
                                     profileServiceMiddleware(service: ProfileService())
                                   ])
+        state.profileComfirmationState.viewModelFactory.store = store
+        state.profileCreationState.viewModelFactory.store = store
 
         return true
     }
@@ -39,8 +41,7 @@ class AppLifeCycleManager {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        let profileCreationViewModel = ProfileCreationViewModelFactory.createProfileViewModel(heading: "Profile Creation", subHeading: ["Use the form below to submit your portfolio.", "An email and password are required."])
-        profileCreationViewModel.store = store
+        let profileCreationViewModel = state.profileCreationState.viewModelFactory.createProfileViewModel(heading: "Profile Creation", subHeading: ["Use the form below to submit your portfolio.", "An email and password are required."])
         
         let profileCreationView = ProfileCreationView<TextFieldViewModel>().environmentObject(profileCreationViewModel)
         let backgroundView = UIView()

@@ -13,7 +13,6 @@ typealias AppStore = Store<AppState, AppAction>
 
 final class Store<State, Action>: ObservableObject {
 
-    // Read only access to app state
     @Published private(set) var state: State
 
     var tasks = [AnyCancellable?]()

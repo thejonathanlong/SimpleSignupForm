@@ -18,7 +18,7 @@ class ProfileService: ProfileFetching {
         var errorDescription: String? {
             switch self {
                 case .failedToSubmitProfile:
-                    return "Oops! Something went wrong on our end. Please try again in a few minutes,"
+                    return "Oops! Something went wrong on our end. Please try again in a few minutes."
             }
         }
     }

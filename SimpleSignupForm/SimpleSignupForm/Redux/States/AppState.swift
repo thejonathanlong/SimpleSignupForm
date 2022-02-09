@@ -9,10 +9,13 @@ import Foundation
 
 enum AppAction {
     case profileCreation(ProfileCreationAction)
+    case profileConfirmation(ProfileConfirmationAction)
 }
 
 struct AppState {
-    let profileCreationState = ProfileCreationState()
+    let profileCreationState = ProfileCreationState(viewModelFactory: ProfileCreationViewModelFactory())
+    let profileComfirmationState = ProfileConfirmationState(viewModelFactory: ProfileConfirmationViewModelFactory())
+    
     var router: RouteController
     
     init(router: RouteController = Router.shared) {

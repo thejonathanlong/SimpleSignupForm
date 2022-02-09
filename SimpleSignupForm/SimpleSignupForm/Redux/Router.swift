@@ -10,6 +10,7 @@ import UIKit
 enum Route {
     case confirmation(ConfirmationViewModel)
     case alert(Error)
+    case dismiss
 }
 
 protocol RouteController {
@@ -23,6 +24,8 @@ class Router: RouteController {
     
     var rootViewController: UIViewController?
     
+    weak var store: AppStore?
+    
     func route(to destination: Route) {
         switch destination {
             case .confirmation(let confirmationViewModel):
@@ -30,8 +33,10 @@ class Router: RouteController {
             
             case .alert(let error):
                 showAlert(for: error)
+            
+            case .dismiss:
+                rootViewController?.presentedViewController?.dismiss(animated: true, completion: nil)
         }
-        
     }
 }
 

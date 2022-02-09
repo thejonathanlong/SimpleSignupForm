@@ -7,20 +7,6 @@
 
 import SwiftUI
 
-struct ConfirmationViewModel {
-    var heading: String {
-        "Hello, \(name)"
-    }
-    
-    var message: String {
-        "Your super-awesome portfolio has been succesfully submitted! The details below will be public within your community!"
-    }
-    
-    var website: String
-    var name: String
-    var email: String
-}
-
 struct ConfirmationView: View {
     var viewModel: ConfirmationViewModel
     
@@ -44,7 +30,7 @@ struct ConfirmationView: View {
             }
             Spacer()
             Button {
-                
+                viewModel.signIn()
             } label: {
                 HStack {
                     Spacer()

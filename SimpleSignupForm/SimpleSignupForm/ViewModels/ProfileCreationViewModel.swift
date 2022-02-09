@@ -14,7 +14,7 @@ class ProfileCreationViewModel<TextFieldViewmodel>: ObservableObject where TextF
     
     var textFieldViewModels: [TextFieldViewmodel]
     
-    var store: AppStore?
+    weak var store: AppStore?
     
     init(heading: String,
          subHeadings: [String],
