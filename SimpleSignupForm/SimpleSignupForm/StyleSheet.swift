@@ -20,6 +20,7 @@ struct StyleSheet {
         case subHeading
         case textField(SubStyle)
         case textFieldContainer
+        case button
         case error
         
         var foregroundColor: Color? {
@@ -44,12 +45,18 @@ struct StyleSheet {
                 
                 case .textFieldContainer:
                     return nil
+                
+                case .button:
+                    return .white
             }
         }
         
         var cornerRadius: CGFloat {
             switch self {
                 case .textFieldContainer:
+                    return 16.0
+                
+                case .button:
                     return 16.0
                 
                 default:
@@ -69,24 +76,50 @@ struct StyleSheet {
         
         var backgroundColor: Color? {
             switch self {
+                case .button:
+                    return .red
+                    
                 default:
-                    return nil
+                    return .clear
             }
+        }
+        
+        var background: some View {
+            Group {
+                switch self {
+                    case .button:
+                        LinearGradient(colors: [.orange, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
+                            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+//                        return RoundedRectangle(cornerRadius: cornerRadius)
+//                            .fill(.clear)
+//                            .background(LinearGradient(colors: [.orange, .red], startPoint: .topLeading, endPoint: .bottomTrailing))
+                        
+                        
+                    default:
+                        RoundedRectangle(cornerRadius: cornerRadius)
+                                        .stroke(borderColor ?? .clear)
+                                        .background(backgroundColor ?? .clear)
+                }
+            }
+//            .background(.clear)
         }
         
         var font: Font? {
             switch self {
                 case .heading:
-                    return Font.custom("AlNile", fixedSize: 72.0)
+                    return Font.custom("Verdana", size: 40.0, relativeTo: .largeTitle)
                     
                 case .subHeading:
-                    return Font.custom("AlNile", fixedSize: 36.0)
+                    return Font.custom("Verdana", size: 16.0, relativeTo: .headline)
                     
                 case .textField:
-                    return Font.custom("AlNile", fixedSize: 22.0)
+                    return Font.custom("Verdana", size: 16.0, relativeTo: .body)
                     
                 case .error:
-                    return Font.custom("AlNile", fixedSize: 16.0)
+                    return Font.custom("Verdana", size: 16.0, relativeTo: .body)
+                
+                case .button:
+                    return Font.custom("Verdana", size: 16.0, relativeTo: .body)
                 
                 case .textFieldContainer:
                     return nil
@@ -101,14 +134,26 @@ struct Style: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundColor(styleType.foregroundColor)
-            .background(RoundedRectangle(cornerRadius: styleType.cornerRadius)
-                            .stroke(styleType.borderColor ?? .clear)
-                            .background(styleType.backgroundColor))
+            .background(styleType.background)
     }
 }
 
 extension View {
     func style(_ type: StyleSheet.StyleType) -> some View {
         modifier(Style(styleType: type))
+    }
+}
+
+extension Text {
+    func style(_ type: StyleSheet.StyleType) -> some View {
+        modifier(Style(styleType: type))
+            .font(type.font)
+    }
+}
+
+extension TextField {
+    func style(_ type: StyleSheet.StyleType) -> some View {
+        modifier(Style(styleType: type))
+            .font(type.font)
     }
 }
