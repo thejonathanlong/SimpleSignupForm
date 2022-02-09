@@ -31,7 +31,7 @@ struct ProfileCreationView<TextFieldViewModel>: View where TextFieldViewModel: T
         VStack(alignment: .leading) {
             ForEach(viewModel.subHeadings, id: \.self) {
                 Text($0)
-                    .style(.subHeading)
+                    .style(.body)
             }
         }
     }

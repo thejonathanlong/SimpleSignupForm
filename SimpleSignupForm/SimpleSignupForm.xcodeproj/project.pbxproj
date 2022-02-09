@@ -16,6 +16,7 @@
 		56681C5F27B37D7F001873F1 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C5E27B37D7F001873F1 /* TextFieldViewModel.swift */; };
 		56681C6127B38356001873F1 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C6027B38356001873F1 /* ButtonStyles.swift */; };
 		56681C6427B386D2001873F1 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C6327B386D2001873F1 /* Validators.swift */; };
+		56681C6727B38B4E001873F1 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C6627B38B4E001873F1 /* ConfirmationView.swift */; };
 		56E0C7EC27B3570F005ED2C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C7EB27B3570F005ED2C2 /* AppDelegate.swift */; };
 		56E0C7EE27B3570F005ED2C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C7ED27B3570F005ED2C2 /* SceneDelegate.swift */; };
 		56E0C7F527B35710005ED2C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56E0C7F427B35710005ED2C2 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		56681C5E27B37D7F001873F1 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
 		56681C6027B38356001873F1 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		56681C6327B386D2001873F1 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		56681C6627B38B4E001873F1 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		56E0C7E827B3570F005ED2C2 /* SimpleSignupForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSignupForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E0C7EB27B3570F005ED2C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56E0C7ED27B3570F005ED2C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				56681C5927B37C3F001873F1 /* HostedViewController.swift */,
 				56E0C81B27B3575F005ED2C2 /* ProfileCreationView.swift */,
 				56E0C81D27B358D3005ED2C2 /* PlaceHoldingTextField.swift */,
+				56681C6627B38B4E001873F1 /* ConfirmationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				56681C6127B38356001873F1 /* ButtonStyles.swift in Sources */,
 				56681C6427B386D2001873F1 /* Validators.swift in Sources */,
 				56681C5D27B37D68001873F1 /* ProfileCreationViewModel.swift in Sources */,
+				56681C6727B38B4E001873F1 /* ConfirmationView.swift in Sources */,
 				56681C5627B37B28001873F1 /* AppLifeCycleManager.swift in Sources */,
 				56E0C7EC27B3570F005ED2C2 /* AppDelegate.swift in Sources */,
 				56E0C7EE27B3570F005ED2C2 /* SceneDelegate.swift in Sources */,

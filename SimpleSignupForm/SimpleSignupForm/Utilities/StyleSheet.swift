@@ -17,18 +17,19 @@ struct StyleSheet {
     
     enum StyleType {
         case heading
-        case subHeading
+        case body
         case textField(SubStyle)
         case textFieldContainer
         case button
         case error
+        case link
         
         var foregroundColor: Color? {
             switch self {
                 case .heading:
                     return .black
                     
-                case .subHeading:
+                case .body:
                     return .black
                     
                 case .textField(let sub):
@@ -48,6 +49,9 @@ struct StyleSheet {
                 
                 case .button:
                     return .white
+                
+                case .link:
+                    return .blue
             }
         }
         
@@ -104,7 +108,7 @@ struct StyleSheet {
                 case .heading:
                     return Font.custom("Verdana", size: 40.0, relativeTo: .largeTitle)
                     
-                case .subHeading:
+                case .body:
                     return Font.custom("Verdana", size: 16.0, relativeTo: .headline)
                     
                 case .textField:
@@ -115,6 +119,9 @@ struct StyleSheet {
                 
                 case .button:
                     return Font.custom("Verdana", size: 16.0, relativeTo: .body)
+                
+                case .link:
+                    return Font.custom("Verdana", size: 16.0, relativeTo: .headline)
                 
                 case .textFieldContainer:
                     return nil
