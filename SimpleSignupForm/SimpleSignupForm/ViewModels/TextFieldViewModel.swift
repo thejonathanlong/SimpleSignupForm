@@ -12,11 +12,29 @@ class TextFieldViewModel: TextFieldDisplayable {
     
     @Published var text: String
     
-    var error: String
+    @Published var error: String
     
-    init(placeHolder: String, text: String = "", error: String = "") {
+    var validators: [Validator]
+    
+    init(placeHolder: String,
+         text: String = "",
+         error: String = "",
+         validators: [Validator] = []) {
         self.placeHolder = placeHolder
         self.text = text
         self.error = error
+        self.validators = validators
+    }
+    
+    func didSubmit() {
+        for validator in validators {
+            do {
+                try validator.validate(text: text)
+                self.error = ""
+            } catch let error {
+                self.error = error.localizedDescription
+                break
+            }
+        }
     }
 }

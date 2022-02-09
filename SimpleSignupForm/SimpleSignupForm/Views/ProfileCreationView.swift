@@ -56,6 +56,7 @@ struct ProfileCreationView<TextFieldViewModel>: View where TextFieldViewModel: T
             .padding()
             .style(.button)
         })
+            .buttonStyle(ScaledButtonStyle(tintColor: nil, pressedScale: 0.9))
     }
 }
 

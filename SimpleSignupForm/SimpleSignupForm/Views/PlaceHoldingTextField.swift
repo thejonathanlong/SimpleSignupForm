@@ -11,6 +11,7 @@ protocol TextFieldDisplayable: ObservableObject {
     var placeHolder: String { get }
     var text: String { get set }
     var error: String { get }
+    func didSubmit()
 }
 
 struct PlaceHoldingTextField<ViewModel>: View where ViewModel: TextFieldDisplayable {
@@ -19,24 +20,39 @@ struct PlaceHoldingTextField<ViewModel>: View where ViewModel: TextFieldDisplaya
     
     var body: some View {
         VStack(alignment: .leading) {
-            if !viewModel.error.isEmpty {
-                Text(viewModel.error)
-                    .style(.error)
-                    .padding(.leading, 16)
-                    .allowsHitTesting(false)
-            }
-            ZStack (alignment: .leading) {
-                TextField("", text: $viewModel.text)
-                    .style(.textField(.primary))
-                if viewModel.text.isEmpty {
-                    Text(viewModel.placeHolder)
-                        .style(.textField(.secondary))
-                }
-            }
+            errorMessage
+            textField
             .padding()
             .style(.textFieldContainer)
         }
-        
+    }
+    
+    @ViewBuilder var errorMessage: some View {
+        if !viewModel.error.isEmpty {
+            Text(viewModel.error)
+                .style(.error)
+                .padding(.leading, 16)
+                
+        }
+    }
+    
+    var textField: some View {
+        ZStack (alignment: .leading) {
+            TextField("", text: $viewModel.text)
+                .style(.textField(.primary))
+                .onSubmit {
+                    viewModel.didSubmit()
+                }
+            placeHolder
+                .allowsHitTesting(false)
+        }
+    }
+    
+    @ViewBuilder var placeHolder: some View {
+        if viewModel.text.isEmpty {
+            Text(viewModel.placeHolder)
+                .style(.textField(.secondary))
+        }
     }
 }
 
@@ -53,6 +69,10 @@ class Preview_TextFieldDisplayable: TextFieldDisplayable {
         self.text = text
         self.placeHolder = placeHolder
         self.error = error
+    }
+    
+    func didSubmit() {
+        
     }
     
 }

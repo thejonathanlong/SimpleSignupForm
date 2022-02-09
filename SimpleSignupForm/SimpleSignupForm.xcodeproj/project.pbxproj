@@ -14,6 +14,8 @@
 		56681C5A27B37C3F001873F1 /* HostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C5927B37C3F001873F1 /* HostedViewController.swift */; };
 		56681C5D27B37D68001873F1 /* ProfileCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C5C27B37D68001873F1 /* ProfileCreationViewModel.swift */; };
 		56681C5F27B37D7F001873F1 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C5E27B37D7F001873F1 /* TextFieldViewModel.swift */; };
+		56681C6127B38356001873F1 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C6027B38356001873F1 /* ButtonStyles.swift */; };
+		56681C6427B386D2001873F1 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C6327B386D2001873F1 /* Validators.swift */; };
 		56E0C7EC27B3570F005ED2C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C7EB27B3570F005ED2C2 /* AppDelegate.swift */; };
 		56E0C7EE27B3570F005ED2C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C7ED27B3570F005ED2C2 /* SceneDelegate.swift */; };
 		56E0C7F527B35710005ED2C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56E0C7F427B35710005ED2C2 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		56681C5927B37C3F001873F1 /* HostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedViewController.swift; sourceTree = "<group>"; };
 		56681C5C27B37D68001873F1 /* ProfileCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCreationViewModel.swift; sourceTree = "<group>"; };
 		56681C5E27B37D7F001873F1 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
+		56681C6027B38356001873F1 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		56681C6327B386D2001873F1 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		56E0C7E827B3570F005ED2C2 /* SimpleSignupForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSignupForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E0C7EB27B3570F005ED2C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56E0C7ED27B3570F005ED2C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,27 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		56681C6227B38488001873F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56681C6027B38356001873F1 /* ButtonStyles.swift */,
+				56681C5927B37C3F001873F1 /* HostedViewController.swift */,
+				56E0C81B27B3575F005ED2C2 /* ProfileCreationView.swift */,
+				56E0C81D27B358D3005ED2C2 /* PlaceHoldingTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		56681C6527B386D8001873F1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				56E0C82127B3691D005ED2C2 /* StyleSheet.swift */,
+				56681C5527B37B28001873F1 /* AppLifeCycleManager.swift */,
+				56681C6327B386D2001873F1 /* Validators.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		56E0C7DF27B3570F005ED2C2 = {
 			isa = PBXGroup;
 			children = (
@@ -136,15 +161,12 @@
 			children = (
 				56E0C7EB27B3570F005ED2C2 /* AppDelegate.swift */,
 				56E0C7ED27B3570F005ED2C2 /* SceneDelegate.swift */,
-				56681C5527B37B28001873F1 /* AppLifeCycleManager.swift */,
 				56E0C7F427B35710005ED2C2 /* Assets.xcassets */,
 				56E0C7F627B35710005ED2C2 /* LaunchScreen.storyboard */,
 				56E0C7F927B35710005ED2C2 /* Info.plist */,
-				56E0C81B27B3575F005ED2C2 /* ProfileCreationView.swift */,
-				56E0C81D27B358D3005ED2C2 /* PlaceHoldingTextField.swift */,
-				56E0C82127B3691D005ED2C2 /* StyleSheet.swift */,
 				56681C5227B37A89001873F1 /* Redux */,
-				56681C5927B37C3F001873F1 /* HostedViewController.swift */,
+				56681C6527B386D8001873F1 /* Utilities */,
+				56681C6227B38488001873F1 /* Views */,
 				56681C5B27B37D55001873F1 /* ViewModels */,
 			);
 			path = SimpleSignupForm;
@@ -304,6 +326,8 @@
 				56E0C81C27B3575F005ED2C2 /* ProfileCreationView.swift in Sources */,
 				56681C5A27B37C3F001873F1 /* HostedViewController.swift in Sources */,
 				56681C5F27B37D7F001873F1 /* TextFieldViewModel.swift in Sources */,
+				56681C6127B38356001873F1 /* ButtonStyles.swift in Sources */,
+				56681C6427B386D2001873F1 /* Validators.swift in Sources */,
 				56681C5D27B37D68001873F1 /* ProfileCreationViewModel.swift in Sources */,
 				56681C5627B37B28001873F1 /* AppLifeCycleManager.swift in Sources */,
 				56E0C7EC27B3570F005ED2C2 /* AppDelegate.swift in Sources */,

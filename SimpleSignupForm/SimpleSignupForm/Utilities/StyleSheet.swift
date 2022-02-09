@@ -90,10 +90,6 @@ struct StyleSheet {
                     case .button:
                         LinearGradient(colors: [.orange, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
                             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-//                        return RoundedRectangle(cornerRadius: cornerRadius)
-//                            .fill(.clear)
-//                            .background(LinearGradient(colors: [.orange, .red], startPoint: .topLeading, endPoint: .bottomTrailing))
-                        
                         
                     default:
                         RoundedRectangle(cornerRadius: cornerRadius)
@@ -101,7 +97,6 @@ struct StyleSheet {
                                         .background(backgroundColor ?? .clear)
                 }
             }
-//            .background(.clear)
         }
         
         var font: Font? {
