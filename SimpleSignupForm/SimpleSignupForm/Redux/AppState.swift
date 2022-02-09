@@ -8,27 +8,17 @@
 import Foundation
 
 enum AppAction {
-    
+    case profileCreation(ProfileCreationAction)
 }
 
 struct AppState {
     let profileCreationState = ProfileCreationState()
 }
 
+enum ProfileCreationAction {
+    case submitProfile
+}
+
 struct ProfileCreationState {
-    var profileCreationViewModel: ProfileCreationViewModel<TextFieldViewModel> {
-        let firstNameTextFieldViewModel = TextFieldViewModel(placeHolder: "First Name")
-        let emailTextFieldViewModel = TextFieldViewModel(placeHolder: "Email Address", validators: [NotEmptyValidator(), EmailAddressValidator()])
-        let passwordTextFieldViewModel = TextFieldViewModel(placeHolder: "Password", validators: [NotEmptyValidator()])
-        let websiteTextFieldViewModel = TextFieldViewModel(placeHolder: "Website", validators: [NotEmptyValidator()])
-        
-       return ProfileCreationViewModel(heading: "Profile Creation",
-                                subHeadings: ["Use the form below to submit your portfolio.",
-                                              "An email and password are required."],
-                                textFieldViewModels: [firstNameTextFieldViewModel,
-                                                     emailTextFieldViewModel,
-                                                     passwordTextFieldViewModel,
-                                                     websiteTextFieldViewModel])
-    }
     
 }

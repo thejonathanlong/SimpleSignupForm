@@ -14,15 +14,19 @@ class ProfileCreationViewModel<TextFieldViewmodel>: ObservableObject where TextF
     
     var textFieldViewModels: [TextFieldViewmodel]
     
+    var store: AppStore?
+    
     init(heading: String,
          subHeadings: [String],
-         textFieldViewModels: [TextFieldViewmodel] = []) {
+         textFieldViewModels: [TextFieldViewmodel] = [],
+         store: AppStore? = nil) {
         self.heading = heading
         self.subHeadings = subHeadings
         self.textFieldViewModels = textFieldViewModels
+        self.store = store
     }
     
     func submit() {
-        
+        store?.dispatch(.profileCreation(.submitProfile))
     }
 }

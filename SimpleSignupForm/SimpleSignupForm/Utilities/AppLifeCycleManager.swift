@@ -37,29 +37,26 @@ class AppLifeCycleManager {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) { }
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        if let store = store {
-            window = UIWindow(windowScene: windowScene)
-            let profileCreationView = ProfileCreationView<TextFieldViewModel>().environmentObject(store.state.profileCreationState.profileCreationViewModel)
-            let backgroundView = UIView()
-            backgroundView.backgroundColor = UIColor.white
-            let rootViewController = HostedViewController(contentView: profileCreationView, backgroundView: backgroundView)
-            
-            window?.rootViewController = rootViewController
-            router.rootViewController = rootViewController
-            window?.makeKeyAndVisible()
-        } else {
-            // If for some reason we don't have a store, then create one and start over.
-            store = AppStore(initialState: state, reducer: appReducer, middlewares: [])
-            self.scene(scene, willConnectTo: session, options: connectionOptions)
-        }
+        
+        window = UIWindow(windowScene: windowScene)
+        let profileCreationViewModel = ProfileCreationViewModelFactory.createProfileViewModel(heading: "Profile Creation", subHeading: ["Use the form below to submit your portfolio.", "An email and password are required."])
+        profileCreationViewModel.store = store
+        
+        let profileCreationView = ProfileCreationView<TextFieldViewModel>().environmentObject(profileCreationViewModel)
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.white
+        let rootViewController = HostedViewController(contentView: profileCreationView, backgroundView: backgroundView)
+        
+        window?.rootViewController = rootViewController
+        router.rootViewController = rootViewController
+        window?.makeKeyAndVisible()
     }
-
+    
     func sceneDidDisconnect(_ scene: UIScene) { }
 
     func sceneDidBecomeActive(_ scene: UIScene) { }

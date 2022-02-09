@@ -64,5 +64,15 @@ typealias Reducer<State, Action> = (inout State, Action) -> Void
 
 // MARK: - AppReducer
 func appReducer(state: inout AppState, action: AppAction) {
-    
+    switch action {
+        case .profileCreation(let profileCreationAction):
+            profileCreationReducer(state: &state, action: profileCreationAction)
+    }
+}
+
+func profileCreationReducer(state: inout AppState, action: ProfileCreationAction) {
+    switch action {
+        case .submitProfile:
+            break
+    }
 }
