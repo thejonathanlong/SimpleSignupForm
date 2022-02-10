@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		564BEC1727B4B6E60015F6AE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BEC1627B4B6E60015F6AE /* LoadingView.swift */; };
+		564BEC1927B4C72A0015F6AE /* ProfileConfirmationViewModelFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BEC1827B4C72A0015F6AE /* ProfileConfirmationViewModelFactoryTests.swift */; };
+		564BEC1B27B4C83D0015F6AE /* ProfileCreationViewModelFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BEC1A27B4C83D0015F6AE /* ProfileCreationViewModelFactoryTests.swift */; };
+		564BEC1F27B566000015F6AE /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BEC1E27B566000015F6AE /* StoreTests.swift */; };
+		564BEC2127B56D100015F6AE /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BEC2027B56D100015F6AE /* RouterTests.swift */; };
+		564BEC2327B570860015F6AE /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BEC2227B570860015F6AE /* ValidatorTests.swift */; };
 		56681C5127B37A7E001873F1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C5027B37A7E001873F1 /* Store.swift */; };
 		56681C5427B37A92001873F1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C5327B37A92001873F1 /* AppState.swift */; };
 		56681C5627B37B28001873F1 /* AppLifeCycleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C5527B37B28001873F1 /* AppLifeCycleManager.swift */; };
@@ -32,8 +37,6 @@
 		56E0C7F527B35710005ED2C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56E0C7F427B35710005ED2C2 /* Assets.xcassets */; };
 		56E0C7F827B35710005ED2C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E0C7F627B35710005ED2C2 /* LaunchScreen.storyboard */; };
 		56E0C80327B35710005ED2C2 /* SimpleSignupFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C80227B35710005ED2C2 /* SimpleSignupFormTests.swift */; };
-		56E0C80D27B35710005ED2C2 /* SimpleSignupFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C80C27B35710005ED2C2 /* SimpleSignupFormUITests.swift */; };
-		56E0C80F27B35710005ED2C2 /* SimpleSignupFormUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C80E27B35710005ED2C2 /* SimpleSignupFormUITestsLaunchTests.swift */; };
 		56E0C81C27B3575F005ED2C2 /* ProfileCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C81B27B3575F005ED2C2 /* ProfileCreationView.swift */; };
 		56E0C81E27B358D3005ED2C2 /* PlaceHoldingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C81D27B358D3005ED2C2 /* PlaceHoldingTextField.swift */; };
 		56E0C82227B3691D005ED2C2 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C82127B3691D005ED2C2 /* StyleSheet.swift */; };
@@ -47,17 +50,15 @@
 			remoteGlobalIDString = 56E0C7E727B3570F005ED2C2;
 			remoteInfo = SimpleSignupForm;
 		};
-		56E0C80927B35710005ED2C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56E0C7E027B3570F005ED2C2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 56E0C7E727B3570F005ED2C2;
-			remoteInfo = SimpleSignupForm;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		564BEC1627B4B6E60015F6AE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		564BEC1827B4C72A0015F6AE /* ProfileConfirmationViewModelFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileConfirmationViewModelFactoryTests.swift; path = SimpleSignupFormTests/ProfileConfirmationViewModelFactoryTests.swift; sourceTree = SOURCE_ROOT; };
+		564BEC1A27B4C83D0015F6AE /* ProfileCreationViewModelFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCreationViewModelFactoryTests.swift; path = SimpleSignupFormTests/ProfileCreationViewModelFactoryTests.swift; sourceTree = SOURCE_ROOT; };
+		564BEC1E27B566000015F6AE /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
+		564BEC2027B56D100015F6AE /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
+		564BEC2227B570860015F6AE /* ValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
 		56681C5027B37A7E001873F1 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		56681C5327B37A92001873F1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		56681C5527B37B28001873F1 /* AppLifeCycleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifeCycleManager.swift; sourceTree = "<group>"; };
@@ -85,9 +86,6 @@
 		56E0C7F927B35710005ED2C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56E0C7FE27B35710005ED2C2 /* SimpleSignupFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleSignupFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E0C80227B35710005ED2C2 /* SimpleSignupFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSignupFormTests.swift; sourceTree = "<group>"; };
-		56E0C80827B35710005ED2C2 /* SimpleSignupFormUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleSignupFormUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		56E0C80C27B35710005ED2C2 /* SimpleSignupFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSignupFormUITests.swift; sourceTree = "<group>"; };
-		56E0C80E27B35710005ED2C2 /* SimpleSignupFormUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSignupFormUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		56E0C81B27B3575F005ED2C2 /* ProfileCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCreationView.swift; sourceTree = "<group>"; };
 		56E0C81D27B358D3005ED2C2 /* PlaceHoldingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHoldingTextField.swift; sourceTree = "<group>"; };
 		56E0C82127B3691D005ED2C2 /* StyleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
@@ -108,13 +106,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56E0C80527B35710005ED2C2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,7 +116,9 @@
 				56681C6E27B4291B001873F1 /* Middleware.swift */,
 				56681C7027B42950001873F1 /* Reducers.swift */,
 				56681C5727B37BC1001873F1 /* Router.swift */,
+				564BEC2027B56D100015F6AE /* RouterTests.swift */,
 				56681C5027B37A7E001873F1 /* Store.swift */,
+				564BEC1E27B566000015F6AE /* StoreTests.swift */,
 			);
 			path = Redux;
 			sourceTree = "<group>";
@@ -156,11 +149,12 @@
 		56681C6527B386D8001873F1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				56681C7B27B433F7001873F1 /* Factories */,
-				56E0C82127B3691D005ED2C2 /* StyleSheet.swift */,
 				56681C5527B37B28001873F1 /* AppLifeCycleManager.swift */,
-				56681C6327B386D2001873F1 /* Validators.swift */,
+				56E0C82127B3691D005ED2C2 /* StyleSheet.swift */,
 				56681C6C27B42713001873F1 /* ProfileService.swift */,
+				56681C6327B386D2001873F1 /* Validators.swift */,
+				564BEC2227B570860015F6AE /* ValidatorTests.swift */,
+				56681C7B27B433F7001873F1 /* Factories */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -179,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				56681C7927B433E1001873F1 /* ProfileConfirmationViewModelFactory.swift */,
+				564BEC1827B4C72A0015F6AE /* ProfileConfirmationViewModelFactoryTests.swift */,
+				564BEC1A27B4C83D0015F6AE /* ProfileCreationViewModelFactoryTests.swift */,
 				56681C6827B38EFC001873F1 /* ProfileCreationViewModelFactory.swift */,
 				56681C6A27B38F64001873F1 /* TextFieldViewModelFactory.swift */,
 			);
@@ -190,7 +186,6 @@
 			children = (
 				56E0C7EA27B3570F005ED2C2 /* SimpleSignupForm */,
 				56E0C80127B35710005ED2C2 /* SimpleSignupFormTests */,
-				56E0C80B27B35710005ED2C2 /* SimpleSignupFormUITests */,
 				56E0C7E927B3570F005ED2C2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -200,7 +195,6 @@
 			children = (
 				56E0C7E827B3570F005ED2C2 /* SimpleSignupForm.app */,
 				56E0C7FE27B35710005ED2C2 /* SimpleSignupFormTests.xctest */,
-				56E0C80827B35710005ED2C2 /* SimpleSignupFormUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,15 +221,6 @@
 				56E0C80227B35710005ED2C2 /* SimpleSignupFormTests.swift */,
 			);
 			path = SimpleSignupFormTests;
-			sourceTree = "<group>";
-		};
-		56E0C80B27B35710005ED2C2 /* SimpleSignupFormUITests */ = {
-			isa = PBXGroup;
-			children = (
-				56E0C80C27B35710005ED2C2 /* SimpleSignupFormUITests.swift */,
-				56E0C80E27B35710005ED2C2 /* SimpleSignupFormUITestsLaunchTests.swift */,
-			);
-			path = SimpleSignupFormUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,24 +261,6 @@
 			productReference = 56E0C7FE27B35710005ED2C2 /* SimpleSignupFormTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		56E0C80727B35710005ED2C2 /* SimpleSignupFormUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 56E0C81827B35710005ED2C2 /* Build configuration list for PBXNativeTarget "SimpleSignupFormUITests" */;
-			buildPhases = (
-				56E0C80427B35710005ED2C2 /* Sources */,
-				56E0C80527B35710005ED2C2 /* Frameworks */,
-				56E0C80627B35710005ED2C2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				56E0C80A27B35710005ED2C2 /* PBXTargetDependency */,
-			);
-			name = SimpleSignupFormUITests;
-			productName = SimpleSignupFormUITests;
-			productReference = 56E0C80827B35710005ED2C2 /* SimpleSignupFormUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -308,10 +275,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					56E0C7FD27B35710005ED2C2 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 56E0C7E727B3570F005ED2C2;
-					};
-					56E0C80727B35710005ED2C2 = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 56E0C7E727B3570F005ED2C2;
 					};
@@ -332,7 +295,6 @@
 			targets = (
 				56E0C7E727B3570F005ED2C2 /* SimpleSignupForm */,
 				56E0C7FD27B35710005ED2C2 /* SimpleSignupFormTests */,
-				56E0C80727B35710005ED2C2 /* SimpleSignupFormUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -348,13 +310,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		56E0C7FC27B35710005ED2C2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		56E0C80627B35710005ED2C2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -400,16 +355,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				564BEC2327B570860015F6AE /* ValidatorTests.swift in Sources */,
+				564BEC2127B56D100015F6AE /* RouterTests.swift in Sources */,
+				564BEC1927B4C72A0015F6AE /* ProfileConfirmationViewModelFactoryTests.swift in Sources */,
+				564BEC1B27B4C83D0015F6AE /* ProfileCreationViewModelFactoryTests.swift in Sources */,
 				56E0C80327B35710005ED2C2 /* SimpleSignupFormTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		56E0C80427B35710005ED2C2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				56E0C80F27B35710005ED2C2 /* SimpleSignupFormUITestsLaunchTests.swift in Sources */,
-				56E0C80D27B35710005ED2C2 /* SimpleSignupFormUITests.swift in Sources */,
+				564BEC1F27B566000015F6AE /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +371,6 @@
 			isa = PBXTargetDependency;
 			target = 56E0C7E727B3570F005ED2C2 /* SimpleSignupForm */;
 			targetProxy = 56E0C7FF27B35710005ED2C2 /* PBXContainerItemProxy */;
-		};
-		56E0C80A27B35710005ED2C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 56E0C7E727B3570F005ED2C2 /* SimpleSignupForm */;
-			targetProxy = 56E0C80927B35710005ED2C2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -650,42 +596,6 @@
 			};
 			name = Release;
 		};
-		56E0C81927B35710005ED2C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 52UN9P9E5H;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jlo.SimpleSignupFormUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SimpleSignupForm;
-			};
-			name = Debug;
-		};
-		56E0C81A27B35710005ED2C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 52UN9P9E5H;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jlo.SimpleSignupFormUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SimpleSignupForm;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -712,15 +622,6 @@
 			buildConfigurations = (
 				56E0C81627B35710005ED2C2 /* Debug */,
 				56E0C81727B35710005ED2C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		56E0C81827B35710005ED2C2 /* Build configuration list for PBXNativeTarget "SimpleSignupFormUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				56E0C81927B35710005ED2C2 /* Debug */,
-				56E0C81A27B35710005ED2C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
