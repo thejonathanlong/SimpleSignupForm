@@ -38,6 +38,7 @@ class ProfileCreationViewModel<TextFieldViewModel>: ObservableObject where TextF
         let email = text(for: .email)
         let website = text(for: .website)
         if canSubmit {
+            store?.dispatch(.profileCreation(.loading))
             store?.dispatch(.profileCreation(.submitProfile(name, password, email, website)))
         } else {
             store?.dispatch(.profileCreation(.failedToSubmitProfile(ProfileService.ProfileFetchingError.needMoreInformation)))

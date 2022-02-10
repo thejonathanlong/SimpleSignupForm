@@ -25,11 +25,16 @@ func profileCreationReducer(state: inout AppState, action: ProfileCreationAction
             break
         
         case .submittedProfile(let name, let website, let email):
+            state.router.route(to: .loading(false))
             let confirmationViewModel = state.profileComfirmationState.viewModelFactory.createConfirmationViewModel(name: name, email: email, website: website)
             state.router.route(to: .confirmation(confirmationViewModel))
         
         case .failedToSubmitProfile(let error):
+            state.router.route(to: .loading(false))
             state.router.route(to: .alert(error))
+        
+        case .loading:
+            state.router.route(to: .loading(true))
     }
 }
 

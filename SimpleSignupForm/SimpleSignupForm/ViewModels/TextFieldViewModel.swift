@@ -29,6 +29,7 @@ class TextFieldViewModel: TextFieldDisplayable {
         self.text = text
         self.error = error
         self.validators = validators
+        self.isValid = validators.isEmpty
     }
     
     func didSubmit() {

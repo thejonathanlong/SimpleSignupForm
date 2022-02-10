@@ -11,6 +11,7 @@ enum Route {
     case confirmation(ConfirmationViewModel)
     case alert(Error)
     case dismiss
+    case loading(Bool)
 }
 
 protocol RouteController {
@@ -26,6 +27,8 @@ class Router: RouteController {
     
     weak var store: AppStore?
     
+    var currentRoute: Route? = nil
+    
     func route(to destination: Route) {
         switch destination {
             case .confirmation(let confirmationViewModel):
@@ -36,7 +39,23 @@ class Router: RouteController {
             
             case .dismiss:
                 rootViewController?.presentedViewController?.dismiss(animated: true, completion: nil)
+                
+            case .loading(let isLoading):
+                switch currentRoute {
+                    case .loading(let isLoading):
+                        if isLoading {
+                            rootViewController?.presentedViewController?.dismiss(animated: false, completion: nil)
+                        }
+                        
+                    default:
+                        break
+                }
+                
+                if isLoading {
+                    showLoader()
+                }
         }
+        currentRoute = destination
     }
 }
 
@@ -55,5 +74,11 @@ private extension Router {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         
         rootViewController?.present(alert, animated: true, completion: nil)
+    }
+    
+    func showLoader() {
+        let hostingController = HostedViewController(contentView: LoadingView(), backgroundView: nil)
+        hostingController.modalPresentationStyle = .overFullScreen
+        rootViewController?.present(hostingController, animated: false, completion: nil)
     }
 }

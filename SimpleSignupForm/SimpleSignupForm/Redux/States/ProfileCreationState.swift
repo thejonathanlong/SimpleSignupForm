@@ -11,6 +11,7 @@ enum ProfileCreationAction {
     case submitProfile(String, String, String, String)
     case submittedProfile(String, String, String)
     case failedToSubmitProfile(Error)
+    case loading
 }
 
 struct ProfileCreationState {

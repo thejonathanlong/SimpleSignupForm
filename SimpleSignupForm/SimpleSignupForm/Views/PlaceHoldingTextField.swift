@@ -60,11 +60,12 @@ struct PlaceHoldingTextField<ViewModel>: View where ViewModel: TextFieldDisplaya
     
     var textField: some View {
         ZStack (alignment: .leading) {
-            TextField("", text: $viewModel.text)
-                .style(.textField(.primary))
-                .onSubmit {
+            TextField("", text: $viewModel.text) { editingChanged in
+                if !editingChanged {
                     viewModel.didSubmit()
                 }
+            }
+            .style(.textField(.primary))
             placeHolder
                 .allowsHitTesting(false)
         }

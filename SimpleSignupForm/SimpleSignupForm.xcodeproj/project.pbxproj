@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		564BEC1727B4B6E60015F6AE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BEC1627B4B6E60015F6AE /* LoadingView.swift */; };
 		56681C5127B37A7E001873F1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C5027B37A7E001873F1 /* Store.swift */; };
 		56681C5427B37A92001873F1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C5327B37A92001873F1 /* AppState.swift */; };
 		56681C5627B37B28001873F1 /* AppLifeCycleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56681C5527B37B28001873F1 /* AppLifeCycleManager.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		564BEC1627B4B6E60015F6AE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		56681C5027B37A7E001873F1 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		56681C5327B37A92001873F1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		56681C5527B37B28001873F1 /* AppLifeCycleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifeCycleManager.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				56E0C81B27B3575F005ED2C2 /* ProfileCreationView.swift */,
 				56E0C81D27B358D3005ED2C2 /* PlaceHoldingTextField.swift */,
 				56681C6627B38B4E001873F1 /* ConfirmationView.swift */,
+				564BEC1627B4B6E60015F6AE /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				56681C6D27B42713001873F1 /* ProfileService.swift in Sources */,
 				56681C7327B4297D001873F1 /* ProfileCreationState.swift in Sources */,
 				56681C6927B38EFC001873F1 /* ProfileCreationViewModelFactory.swift in Sources */,
+				564BEC1727B4B6E60015F6AE /* LoadingView.swift in Sources */,
 				56681C7827B42B9F001873F1 /* ProfileConfirmationState.swift in Sources */,
 				56681C6727B38B4E001873F1 /* ConfirmationView.swift in Sources */,
 				56681C5627B37B28001873F1 /* AppLifeCycleManager.swift in Sources */,
