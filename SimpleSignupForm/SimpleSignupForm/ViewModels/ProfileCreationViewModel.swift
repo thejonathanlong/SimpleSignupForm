@@ -14,6 +14,12 @@ class ProfileCreationViewModel<TextFieldViewModel>: ObservableObject where TextF
     
     var textFieldViewModels: [TextFieldViewModel]
     
+    var canSubmit: Bool {
+        textFieldViewModels.reduce(true) {
+            $0 && $1.isValid
+        }
+    }
+    
     weak var store: AppStore?
     
     init(heading: String,
@@ -31,7 +37,11 @@ class ProfileCreationViewModel<TextFieldViewModel>: ObservableObject where TextF
         let password = text(for: .password)
         let email = text(for: .email)
         let website = text(for: .website)
-        store?.dispatch(.profileCreation(.submitProfile(name, password, email, website)))
+        if canSubmit {
+            store?.dispatch(.profileCreation(.submitProfile(name, password, email, website)))
+        } else {
+            store?.dispatch(.profileCreation(.failedToSubmitProfile(ProfileService.ProfileFetchingError.needMoreInformation)))
+        }
     }
     
     func text(for type: TextFieldType) -> String {

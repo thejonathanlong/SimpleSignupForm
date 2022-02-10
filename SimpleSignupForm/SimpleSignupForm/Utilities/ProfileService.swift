@@ -14,11 +14,14 @@ protocol ProfileFetching {
 class ProfileService: ProfileFetching {
     enum ProfileFetchingError: LocalizedError {
         case failedToSubmitProfile
+        case needMoreInformation
         
         var errorDescription: String? {
             switch self {
                 case .failedToSubmitProfile:
                     return "Oops! Something went wrong on our end. Please try again in a few minutes."
+                case .needMoreInformation:
+                    return "Uhoh! Your email, website, and a password are all required to submit."
             }
         }
     }

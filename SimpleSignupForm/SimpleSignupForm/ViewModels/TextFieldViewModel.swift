@@ -18,6 +18,8 @@ class TextFieldViewModel: TextFieldDisplayable {
     
     var type: TextFieldType
     
+    var isValid: Bool = false
+    
     init(type: TextFieldType,
          text: String = "",
          error: String = "",
@@ -34,8 +36,10 @@ class TextFieldViewModel: TextFieldDisplayable {
             do {
                 try validator.validate(text: text)
                 self.error = ""
+                isValid = true
             } catch let error {
                 self.error = error.localizedDescription
+                isValid = false
                 break
             }
         }

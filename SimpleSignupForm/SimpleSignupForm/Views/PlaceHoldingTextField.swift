@@ -33,6 +33,7 @@ protocol TextFieldDisplayable: ObservableObject {
     var error: String { get }
     var type: TextFieldType { get }
     func didSubmit()
+    var isValid: Bool { get }
 }
 
 struct PlaceHoldingTextField<ViewModel>: View where ViewModel: TextFieldDisplayable {
@@ -85,6 +86,8 @@ class Preview_TextFieldDisplayable: TextFieldDisplayable {
     var placeHolder: String
     
     var text: String
+    
+    var isValid: Bool = true
     
     init(text: String = "",
          placeHolder: String = "",
