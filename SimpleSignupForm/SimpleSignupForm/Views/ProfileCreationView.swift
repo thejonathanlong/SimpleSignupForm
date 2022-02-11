@@ -8,17 +8,25 @@
 import SwiftUI
 
 struct ProfileCreationView<TextFieldViewModel>: View where TextFieldViewModel: TextFieldDisplayable {
+    @State var orientation: UIDeviceOrientation = UIDevice.current.orientation
     @EnvironmentObject var viewModel: ProfileCreationViewModel<TextFieldViewModel>
     
     var body: some View {
-        VStack(spacing: 20) {
-            VStack(alignment: .leading, spacing: 20) {
+        VStack(spacing: viewSpacing()) {
+            VStack(alignment: .leading, spacing: viewSpacing()) {
                 heading
                 subheadings
             }
-            form.padding()
+            if orientation == .landscapeLeft || orientation == .landscapeRight {
+                horizontalform.padding([.leading, .trailing])
+            } else {
+                form.padding([.leading, .trailing])
+            }
             Spacer()
-            submitButton.padding()
+            submitButton.padding([.leading, .trailing])
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            orientation = UIDevice.current.orientation
         }
     }
     
@@ -37,9 +45,28 @@ struct ProfileCreationView<TextFieldViewModel>: View where TextFieldViewModel: T
     }
     
     var form: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: formSpacing()) {
             ForEach(0..<viewModel.textFieldViewModels.count) {
                 PlaceHoldingTextField<TextFieldViewModel>().environmentObject(viewModel.textFieldViewModels[$0])
+            }
+        }
+    }
+    
+    var horizontalform: some View {
+        VStack(alignment: .leading, spacing: formSpacing()) {
+            if viewModel.textFieldViewModels.count >= 2 {
+                HStack {
+                    ForEach(0..<2) {
+                        PlaceHoldingTextField<TextFieldViewModel>().environmentObject(viewModel.textFieldViewModels[$0])
+                    }
+                }
+                ForEach(2..<viewModel.textFieldViewModels.count) {
+                    PlaceHoldingTextField<TextFieldViewModel>().environmentObject(viewModel.textFieldViewModels[$0])
+                }
+            } else {
+                ForEach(0..<viewModel.textFieldViewModels.count) {
+                    PlaceHoldingTextField<TextFieldViewModel>().environmentObject(viewModel.textFieldViewModels[$0])
+                }
             }
         }
     }
@@ -58,6 +85,44 @@ struct ProfileCreationView<TextFieldViewModel>: View where TextFieldViewModel: T
         })
             .buttonStyle(ScaledButtonStyle(tintColor: nil, pressedScale: 0.9))
     }
+    
+    func viewSpacing() -> CGFloat {
+        switch orientation {
+            case .portrait:
+                return 20
+                
+            case .portraitUpsideDown:
+                return 20
+                
+            case .landscapeLeft:
+                return 10
+                
+            case .landscapeRight:
+                return 10
+            
+            default:
+                return 20
+        }
+    }
+    
+    func formSpacing() -> CGFloat {
+        switch orientation {
+            case .portrait:
+                return 16
+                
+            case .portraitUpsideDown:
+                return 16
+                
+            case .landscapeLeft:
+                return 8
+                
+            case .landscapeRight:
+                return 8
+            
+            default:
+                return 16
+        }
+    }
 }
 
 struct ProfileCreationView_Previews: PreviewProvider {
@@ -72,5 +137,6 @@ struct ProfileCreationView_Previews: PreviewProvider {
                 Preview_TextFieldDisplayable(placeHolder: "Password"),
                 Preview_TextFieldDisplayable(placeHolder: "Password")]
         ))
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

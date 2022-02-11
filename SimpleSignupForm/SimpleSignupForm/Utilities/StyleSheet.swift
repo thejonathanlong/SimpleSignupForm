@@ -112,10 +112,10 @@ struct StyleSheet {
                     return Font.custom("Verdana", size: 16.0, relativeTo: .headline)
                     
                 case .textField:
-                    return Font.custom("Verdana", size: 16.0, relativeTo: .body)
+                    return Font.custom("Verdana", size: 12.0, relativeTo: .body)
                     
                 case .error:
-                    return Font.custom("Verdana", size: 16.0, relativeTo: .body)
+                    return Font.custom("Verdana", size: 12.0, relativeTo: .body)
                 
                 case .button:
                     return Font.custom("Verdana", size: 16.0, relativeTo: .body)
