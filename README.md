@@ -22,7 +22,7 @@ In landscape one textField was moved to the same line as the previous textField 
 
 * A ProfileService was implemented to fake a request being made to create the profile. This service delays for 2 seconds and then randomly will throw an error for the app to handle. Errors are presented as errors informing the user to try again.
 * TextField validation was handled for each Text Field. The password, email, and website were implemented as required fields and will display an error if left blank. Emails were validated with a loose regex.
-
+* Unit tests have been implemented for some functionality. Test files sit next to the file they are testing.
 
 ## What Next?
 

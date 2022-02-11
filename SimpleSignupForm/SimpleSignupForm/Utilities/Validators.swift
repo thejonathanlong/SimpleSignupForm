@@ -28,7 +28,6 @@ enum ValidationError: LocalizedError {
 }
 
 struct NotEmptyValidator: Validator {
-    
     func validate(text: String) throws {
         switch text.isEmpty {
             case true:

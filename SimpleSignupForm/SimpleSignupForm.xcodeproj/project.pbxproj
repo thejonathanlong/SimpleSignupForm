@@ -36,7 +36,6 @@
 		56E0C7EE27B3570F005ED2C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C7ED27B3570F005ED2C2 /* SceneDelegate.swift */; };
 		56E0C7F527B35710005ED2C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56E0C7F427B35710005ED2C2 /* Assets.xcassets */; };
 		56E0C7F827B35710005ED2C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E0C7F627B35710005ED2C2 /* LaunchScreen.storyboard */; };
-		56E0C80327B35710005ED2C2 /* SimpleSignupFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C80227B35710005ED2C2 /* SimpleSignupFormTests.swift */; };
 		56E0C81C27B3575F005ED2C2 /* ProfileCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C81B27B3575F005ED2C2 /* ProfileCreationView.swift */; };
 		56E0C81E27B358D3005ED2C2 /* PlaceHoldingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C81D27B358D3005ED2C2 /* PlaceHoldingTextField.swift */; };
 		56E0C82227B3691D005ED2C2 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0C82127B3691D005ED2C2 /* StyleSheet.swift */; };
@@ -85,7 +84,6 @@
 		56E0C7F727B35710005ED2C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56E0C7F927B35710005ED2C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56E0C7FE27B35710005ED2C2 /* SimpleSignupFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleSignupFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		56E0C80227B35710005ED2C2 /* SimpleSignupFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSignupFormTests.swift; sourceTree = "<group>"; };
 		56E0C81B27B3575F005ED2C2 /* ProfileCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCreationView.swift; sourceTree = "<group>"; };
 		56E0C81D27B358D3005ED2C2 /* PlaceHoldingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHoldingTextField.swift; sourceTree = "<group>"; };
 		56E0C82127B3691D005ED2C2 /* StyleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				56E0C7EA27B3570F005ED2C2 /* SimpleSignupForm */,
-				56E0C80127B35710005ED2C2 /* SimpleSignupFormTests */,
 				56E0C7E927B3570F005ED2C2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -213,14 +210,6 @@
 				56681C5B27B37D55001873F1 /* ViewModels */,
 			);
 			path = SimpleSignupForm;
-			sourceTree = "<group>";
-		};
-		56E0C80127B35710005ED2C2 /* SimpleSignupFormTests */ = {
-			isa = PBXGroup;
-			children = (
-				56E0C80227B35710005ED2C2 /* SimpleSignupFormTests.swift */,
-			);
-			path = SimpleSignupFormTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,7 +348,6 @@
 				564BEC2127B56D100015F6AE /* RouterTests.swift in Sources */,
 				564BEC1927B4C72A0015F6AE /* ProfileConfirmationViewModelFactoryTests.swift in Sources */,
 				564BEC1B27B4C83D0015F6AE /* ProfileCreationViewModelFactoryTests.swift in Sources */,
-				56E0C80327B35710005ED2C2 /* SimpleSignupFormTests.swift in Sources */,
 				564BEC1F27B566000015F6AE /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
